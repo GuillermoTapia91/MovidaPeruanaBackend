@@ -1,7 +1,7 @@
 from config import conexion
 from sqlalchemy import Column, types,ForeignKey
 
-class UsuarioModel(conexion.Model):
+class EventoModel(conexion.Model):
     id = Column(type_=types.Integer,primary_key= True, autoincrement=True)
     descripcion = Column(type_=types.Text, nullable=False)
     fotoEvento = Column(type_=types.Text, name= 'foto_evento',nullable=False) #verificar
