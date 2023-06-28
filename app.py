@@ -7,6 +7,7 @@ from models.establecimiento_model import EstablecimientoModel
 from models.eventos_model import EventoModel
 from os import environ
 from dotenv import load_dotenv
+from controllers.usuario_controller import UsuariosController
 
 #from flask_cors import CORS #instalar libreria
 
@@ -20,6 +21,8 @@ app.config['SQLALCHEMY_DATABASE_URI']=environ.get('DATABASE_URL')
 conexion.init_app(app)
 
 Migrate(app, conexion)
+
+api.add_resource(UsuariosController, "/crear-usuarios", "/listar-usuarios")
 
 if __name__ == ("__main__"):
     app.run(debug=True)
